@@ -488,7 +488,7 @@ class PeerSearchSimplified
   def listen()
     begin
       timeout(40) do
-        10.times do
+        loop do
           msg, client  = @socket.recvfrom(1024) #=> "aaa"
           puts "Message Recieved: '%s'" % msg
           jsonMsg = JSON.parse(msg)
@@ -497,6 +497,7 @@ class PeerSearchSimplified
       end
     rescue Timeout::Error
       puts "Timout in Listen occurred"
+      puts "Socket Closed"
     ensure
       @socket.close
     end

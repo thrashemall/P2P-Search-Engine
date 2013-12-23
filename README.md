@@ -40,6 +40,31 @@ This simple test showed that the system was working according to the developed p
 may contain duplicates. (unfortunately I had no more time left to fix this).
 
 Sample Usage
+-------------
+nodes join the netork and listen for incoming messages as follows (in a .rb script):
+```
+....
+bootstrap_port = 8781
+node = PeerSearchSimplified.new(createSocket(bootstrap_port+1))
+node.joinNetwork(bootstrap_port, "jane", "james") # bootstrap port address, node1 id, bootstrap_id(to route to)
+node.listen
+```
+
+This will initialize a node with 1 port number, greater than the bootstrap_port.
+
+Nodes index and search for keyword and url pairs as follows:
+```
+....
+node4.joinNetwork(bootstrap_port, "paul", "jane")
+#test urls
+urls = ["www.help.org", "www.ruby.org", "www.pluckit.io"]
+node4.indexPage(urls, ["jane", "james"])
+results = node4.search(["jane", "james"])
+....
+```
+
+
+Sample Usage with Test Filesin Terminal
 ----------------
 
 Terminal 1:
