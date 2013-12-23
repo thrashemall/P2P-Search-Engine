@@ -20,16 +20,18 @@ node with id: "peter" and "paul"), and files when executed respectively as separ
 Where each node joins the network via the bootstrap node's port, routing to the previous node initialized.
 
 i.e. ..... Join Message Routing......
+```
  "jane" -----> bootstrap
  "john" -----> "jane"
  "peter" -----> "jhon"
  "paul" -----> "peter"
+```
 
-The above .rb files must be called on separate consoles as each node has to run on its own process since each node polls
-and blocks for messages to be received.
+The above .rb files must be called on separate terminals as each node has to run on its own process since each node polls
+and blocks for messages to be received. Therefore if testing the code via a script then you may need to run each node on a separate thread
 
 Running each node on a separate console with the node<x>.rb files configureing the corresponding nodes tests the system,
-by instanciating a node with specified ID and port number and are set to listen in their corresponding ports for incomming messages.
+by instantiating a node with specified ID and port number and are set to listen in their corresponding ports for incomming messages.
 Additionally the one node is just joined and does not listen, i.e. acting as a node that has left the network,
 and two other nodes send INDEX messages accross the network, the data in the index message is then used when sending a
 SEARCH message on the network looking for some of the content indexed.
@@ -41,18 +43,30 @@ Sample Usage
 ----------------
 
 Terminal 1:
-$ ruby nodes.rb --boot "james" --port 8780
-
-Terminal 1:
-$ ruby node1.rb
-
-Terminal 1:
 ```
-$ ruby node2.rb # initializes two nodes, with id "jhon" and "paul".
-# node: "jhon" does not listen in the network and therefore has dropped unexpectedly
+$ ruby nodes.rb --boot "james" --port 8780
 ```
-Terminal 1:
-$ ruby nodes.rb --boot "james" --port 8780
+starts a node with node id: "james" and port no. 8780
 
-Terminal 1:
-$ ruby nodes.rb --boot "james" --port 8780
+Terminal 2:
+```
+$ ruby node1.rb --boot_port 8780
+```
+starts a node with node id: "jane" and port no. 8780
+
+Terminal 3:
+```
+$ ruby node2.rb --boot_port 8780
+```
+initializes two nodes, with id "jhon" and "paul" respectively.
+node: "jhon" does not listen in the network and therefore has dropped unexpectedly, whereas node paul sends an INDEX message and then performs a search request.
+Search results from request are written to testfile.json
+```
+cat testfile.json
+```
+
+Terminal 4:
+```
+$ ruby nodes3.rb --boot_port 8780
+```
+starts a node with node id: "peter" and port no. 8780
