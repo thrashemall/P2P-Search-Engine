@@ -51,6 +51,7 @@ node.listen
 ```
 
 This will initialize a node with 1 port number, greater than the bootstrap_port.
+NOTE: that nodes listen for maximum of 40 seconds and then close the socket, in order to ensure the socket will be reusable. This timout time can be easily change in the listen() method in the peer_search_simplified.rb file.
 
 Nodes index and search for keyword and url pairs as follows:
 ```
