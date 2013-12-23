@@ -43,18 +43,22 @@ Sample Usage
 -------------
 nodes join the netork and listen for incoming messages as follows (in a .rb script):
 ```
+require_relative 'peer_search_simplified'
 ....
 bootstrap_port = 8781
 node = PeerSearchSimplified.new(createSocket(bootstrap_port+1))
 node.joinNetwork(bootstrap_port, "jane", "james") # bootstrap port address, node1 id, bootstrap_id(to route to)
 node.listen
+
 ```
 
 This will initialize a node with 1 port number, greater than the bootstrap_port.
 NOTE: that nodes listen for maximum of 40 seconds and then close the socket, in order to ensure the socket will be reusable. This timout time can be easily change in the listen() method in the peer_search_simplified.rb file.
 
 Nodes index and search for keyword and url pairs as follows:
+
 ```
+require_relative 'peer_search_simplified'
 ....
 node4.joinNetwork(bootstrap_port, "paul", "jane")
 #test urls
