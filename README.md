@@ -36,3 +36,9 @@ SEARCH message on the network looking for some of the content indexed.
 
 This simple test showed that the system was working according to the developed protocol. However one bug to note is that the routing table
 may contain duplicates. (unfortunately I had no more time left to fix this).
+
+Sample Usage
+----------------
+
+Terminal 1:
+ruby nodes.rb --boot "james" --port 8780
