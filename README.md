@@ -104,5 +104,5 @@ starts a node with node id: "peter" and port no. 8780
 Issues
 -------------
 
-- [] The hash function does not seem to function accordingly as the node is's generated are not of the order of 2^32 but rather dependant on the length of the input string to be hased
-- [] The routing table seems to be repeating nodes. This is not a problem when routing as the program can handle this issue, but its not clean nevertheless.
+- The hash function does not seem to function accordingly as the node is's generated are not of the order of 2^32 but rather dependant on the length of the input string to be hased
+- The routing table seems to be repeating nodes. This is not a problem when routing as the program can handle this issue, but its not clean nevertheless.
