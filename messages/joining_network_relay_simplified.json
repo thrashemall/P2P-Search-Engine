@@ -1,0 +1,6 @@
+{
+    "type": "JOINING_NETWORK_RELAY_SIMPLIFIED",
+    "node_id": "42",
+    "target_id": "42", 
+    "gateway_id": "34"
+}

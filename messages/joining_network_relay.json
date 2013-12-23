@@ -1,0 +1,5 @@
+{
+    "type": "JOINING_NETWORK_RELAY", 
+    "node_id": "42", 
+    "gateway_id": "34",
+}

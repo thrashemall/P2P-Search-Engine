@@ -1,0 +1,17 @@
+{
+    "type": "SEARCH_RESPONSE",
+    "word": "word", // The word to search for
+    "node_id": "45",  // target node id
+    "sender_id": "34", // a non-negative number of order 2'^32^', of this message originator
+    "response":
+        [
+            {
+                "url": "www.dsg.cs.tcd.ie/",
+                "rank": "32"
+            },
+            {
+                "url": "www.scss.tcd.ie/courses/mscnds/",
+                "rank": "1"
+            }
+        ]
+}

@@ -1,0 +1,10 @@
+{
+    "type": "INDEX",
+    "target_id": "34",
+    "sender_id": "34",
+    "keyword": "XXX",
+    "link": [
+        "http://www.newindex.com",
+        "http://www.xyz.com"
+    ]
+}
