@@ -1,5 +1,7 @@
 P2P-Search-Engine
 =================
+Student: Ricardo Gaviria
+Student No. 09610693
 
 This Implementation consists of the peer_search_simplified.rb file which contains all the peer class implementation with corresponding methods
 
