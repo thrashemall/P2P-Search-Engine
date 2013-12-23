@@ -41,4 +41,18 @@ Sample Usage
 ----------------
 
 Terminal 1:
-ruby nodes.rb --boot "james" --port 8780
+$ ruby nodes.rb --boot "james" --port 8780
+
+Terminal 1:
+$ ruby node1.rb
+
+Terminal 1:
+```
+$ ruby node2.rb # initializes two nodes, with id "jhon" and "paul".
+# node: "jhon" does not listen in the network and therefore has dropped unexpectedly
+```
+Terminal 1:
+$ ruby nodes.rb --boot "james" --port 8780
+
+Terminal 1:
+$ ruby nodes.rb --boot "james" --port 8780
